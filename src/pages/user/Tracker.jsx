@@ -49,7 +49,6 @@ const Tracker = () => {
       api.get('/jobs')
     ]);
     
-    // Backend returns array, but frontend expects object with status keys
     const applicationsArray = applicationsResponse.data.data;
     const applicationsByStatus = {
       saved: applicationsArray.filter(app => app.status === 'saved'),
@@ -142,7 +141,7 @@ const handleCreateApplication = async () => {
   }
 
   return (
-    <div className="min-h-screen p-4 bg-gray-50 md:p-6">
+    <div className="min-h-screen p-4 bg-gray-50 md:p-6 scroll">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="p-6 mb-6 bg-white shadow-sm rounded-xl">

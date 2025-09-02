@@ -14,13 +14,13 @@
   }
   
   body {
-    @apply bg-gray-50 text-gray-900 antialiased;
+    @apply antialiased text-gray-900 bg-gray-50;
   }
 }
 
 @layer components {
   .card {
-    @apply bg-white rounded-xl border border-gray-200 shadow-sm p-6;
+    @apply p-6 bg-white border border-gray-200 shadow-sm rounded-xl;
   }
   
   .btn-primary {
@@ -106,4 +106,8 @@
 
 .animation-delay-4000 {
   animation-delay: 4s;
+}
+
+.scroll::-webkit-scrollbar{
+  display: none;
 }
