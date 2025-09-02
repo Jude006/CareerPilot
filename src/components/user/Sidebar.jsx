@@ -51,6 +51,7 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
             <Link
               key={item.name}
               to={item.href}
+               onClick={() => setSidebarOpen(false)}
               className={`flex items-center px-4 py-3 rounded-lg transition-all duration-200 ${
                 isActive
                   ? 'bg-blue-50 text-blue-600 border-r-2 border-blue-600'

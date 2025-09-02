@@ -19,7 +19,7 @@ Set up MongoDB (local or cloud Atlas)
 Implement authentication first
 
 Build the job model and basic CRUD operations
-
+dssss     
 Create the main dashboard
 
 Add scraping functionality for automatic job collection

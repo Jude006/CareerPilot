@@ -12,11 +12,10 @@ import NotFound from "../pages/NotFound";
 const AppRoutes = () => {
   return (
     <Routes>
-      {/* Public routes with layout */}
       <Route path="/" element={<HomeLayout />}>
         <Route index element={<Home />} />
       </Route>
-      
+
       {/* Auth routes */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
