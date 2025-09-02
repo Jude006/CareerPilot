@@ -31,7 +31,7 @@ const Export = () => {
 
   const fetchExportHistory = async () => {
     try {
-      const response = await api.get("/api/export/history");
+      const response = await api.get("/export/history");
       setExportHistory(response.data.data);
     } catch (err) {
       console.error("Failed to fetch export history:", err);
@@ -64,7 +64,7 @@ const Export = () => {
       }
 
       const response = await api.post(
-        "/api/export",
+        "/export",
         {
           format: selectedFormat,
           dataTypes,
