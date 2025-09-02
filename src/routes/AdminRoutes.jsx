@@ -10,15 +10,11 @@ import AdminLayout from '../components/admin/AdminLayout';
 const AdminRoutes = () => {
   return (
     <Routes>
-      <Route  element={<AdminLayout />}>
+      <Route path="/admin" element={<AdminLayout />}>
         <Route index element={<AdminDashboard />} />
         <Route path="users" element={<UserManagement />} />
         <Route path="jobs" element={<JobManagement />} />
         <Route path="settings" element={<SystemSettings />} />
-      </Route>
-      
-      <Route path="*" element={<AdminLayout />}>
-        <Route index element={<AdminDashboard />} />
       </Route>
     </Routes>
   );

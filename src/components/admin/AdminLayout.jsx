@@ -23,32 +23,33 @@ const AdminLayout = () => {
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
   const location = useLocation();
 
-  const navigation = [
-    {
-      name: 'Dashboard',
-      href: '/user/admin',
-      icon: LayoutDashboard,
-      current: location.pathname === '/admin'
-    },
-    {
-      name: 'User Management',
-      href: '/user/admin/users',
-      icon: Users,
-      current: location.pathname === '/admin/users'
-    },
-    {
-      name: 'Job Management',
-      href: '/user/admin/jobs',
-      icon: Briefcase,
-      current: location.pathname === '/admin/jobs'
-    },
-    {
-      name: 'System Settings',
-      href: '/user/admin/settings',
-      icon: Settings,
-      current: location.pathname === '/admin/settings'
-    }
-  ];
+// Update the navigation array in AdminLayout.jsx
+const navigation = [
+  {
+    name: 'Dashboard',
+    href: '/user/admin',
+    icon: LayoutDashboard,
+    current: location.pathname === '/user/admin'
+  },
+  {
+    name: 'User Management',
+    href: '/user/admin/users',
+    icon: Users,
+    current: location.pathname === '/user/admin/users'
+  },
+  {
+    name: 'Job Management',
+    href: '/user/admin/jobs',
+    icon: Briefcase,
+    current: location.pathname === '/user/admin/jobs'
+  },
+  {
+    name: 'System Settings',
+    href: '/user/admin/settings',
+    icon: Settings,
+    current: location.pathname === '/user/admin/settings'
+  }
+];
 
   const stats = [
     { label: 'Total Users', value: '2,842', change: '+12%', icon: Users },

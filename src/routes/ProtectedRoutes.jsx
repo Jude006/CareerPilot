@@ -1,3 +1,4 @@
+// src/routes/ProtectedRoutes.jsx
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -9,8 +10,8 @@ const ProtectedRoutes = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="w-12 h-12 border-b-2 border-blue-600 rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -25,7 +26,7 @@ const ProtectedRoutes = () => {
       {user.role === 'user' && <Route path="/*" element={<UserRoutes />} />}
       
       {/* Admin routes */}
-      {user.role === 'admin' && <Route path="/*" element={<AdminRoutes />} />}
+      {user.role === 'admin' && <Route path="/admin/*" element={<AdminRoutes />} />}
       
       {/* Redirect based on role */}
       <Route path="*" element={<Navigate to={user.role === 'admin' ? '/admin' : '/dashboard'} replace />} />
