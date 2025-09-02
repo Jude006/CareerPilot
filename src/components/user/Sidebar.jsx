@@ -9,7 +9,7 @@ import {
   User,
   Settings,
   LogOut,
-  X
+  X,Bot
 } from 'lucide-react';
 
 const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
@@ -21,7 +21,7 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
     { name: 'Tracker', href: '/user/tracker', icon: BarChart3 },
     { name: 'Analytics', href: '/user/analytics', icon: FileText },
     { name: 'Export Data', href: '/user/export', icon: Download },
-    { name: 'Ai-Dashboard', href: '/user/aiDashboard', icon: Download },
+    { name: 'AI Assistant', href: '/user/aiDashboard', icon: Bot },
     { name: 'Profile', href: '/user/profile', icon: User },
   ];
 
