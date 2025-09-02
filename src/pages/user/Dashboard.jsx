@@ -121,7 +121,7 @@ const Dashboard = () => {
               Filter
             </button>
             <Link
-              to="/user/add-job"
+              to="/user/jobs"
               className="flex items-center px-4 py-2 text-white transition-colors duration-200 bg-blue-600 rounded-lg hover:bg-blue-700"
             >
               <Plus className="w-4 h-4 mr-2" />
