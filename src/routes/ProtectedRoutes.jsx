@@ -1,4 +1,3 @@
-// src/routes/ProtectedRoutes.jsx
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -23,7 +22,7 @@ const ProtectedRoutes = () => {
   return (
     <Routes>
       {/* User routes */}
-      {user.role === 'user' && <Route path="/*" element={<UserRoutes />} />}
+      {user.role === 'user' && <Route path="/user/*" element={<UserRoutes />} />}
       
       {/* Admin routes */}
       {user.role === 'admin' && <Route path="/admin/*" element={<AdminRoutes />} />}

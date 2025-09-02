@@ -12,18 +12,21 @@ import NotFound from "../pages/NotFound";
 const AppRoutes = () => {
   return (
     <Routes>
+      {/* Public routes with layout */}
       <Route path="/" element={<HomeLayout />}>
         <Route index element={<Home />} />
       </Route>
-
+      
+      {/* Auth routes */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
 
-      <Route path="/user/*" element={<ProtectedRoutes />} />
-      <Route path="/admin/*" element={<ProtectedRoutes />} />
+      {/* Protected routes */}
+      <Route path="/" element={<ProtectedRoutes />} />
 
+      {/* 404 catch-all */}
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
