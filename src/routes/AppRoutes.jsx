@@ -23,8 +23,8 @@ const AppRoutes = () => {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
 
-      {/* Protected routes */}
-      <Route path="/" element={<ProtectedRoutes />} />
+      {/* Protected routes - catch all other routes */}
+      <Route path="/*" element={<ProtectedRoutes />} />
 
       {/* 404 catch-all */}
       <Route path="*" element={<NotFound />} />

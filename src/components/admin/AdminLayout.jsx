@@ -29,19 +29,19 @@ const navigation = [
     name: 'Dashboard',
     href: '/admin',
     icon: LayoutDashboard,
-    current: location.pathname === '/user/admin'
+    current: location.pathname === '/admin'
   },
   {
     name: 'User Management',
     href: 'admin/users',
     icon: Users,
-    current: location.pathname === '/user/admin/users'
+    current: location.pathname === '/admin/users'
   },
   {
     name: 'Job Management',
     href: 'admin/jobs',
     icon: Briefcase,
-    current: location.pathname === '/user/admin/jobs'
+    current: location.pathname === '/admin/jobs'
   },
   {
     name: 'System Settings',

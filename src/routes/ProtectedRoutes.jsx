@@ -19,18 +19,17 @@ const ProtectedRoutes = () => {
     return <Navigate to="/login" replace />;
   }
 
-  return (
-    <Routes>
-      {/* User routes */}
-      {user.role === 'user' && <Route path="/user/*" element={<UserRoutes />} />}
-      
-      {/* Admin routes */}
-      {user.role === 'admin' && <Route path="/admin/*" element={<AdminRoutes />} />}
-      
-      {/* Redirect based on role */}
-      <Route path="*" element={<Navigate to={user.role === 'admin' ? '/admin' : '/dashboard'} replace />} />
-    </Routes>
-  );
+  // For admin users, render AdminRoutes
+  if (user.role === 'admin') {
+    return <AdminRoutes />;
+  }
+  
+  // For regular users, render UserRoutes
+  if (user.role === 'user') {
+    return <UserRoutes />;
+  }
+
+  return <Navigate to="/login" replace />;
 };
 
 export default ProtectedRoutes;
