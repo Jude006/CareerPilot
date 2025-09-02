@@ -19,15 +19,9 @@ const ProtectedRoutes = () => {
     return <Navigate to="/login" replace />;
   }
 
-  // For admin users, render AdminRoutes
-  if (user.role === 'admin') {
-    return <AdminRoutes />;
-  }
-  
-  // For regular users, render UserRoutes
-  if (user.role === 'user') {
-    return <UserRoutes />;
-  }
+{user.role === 'user' && <Route path="/user/*" element={<UserRoutes />} />}
+{user.role === 'user' && <Route path="/admin/*" element={<AdminRoutes />} />}
+
 
   return <Navigate to="/login" replace />;
 };

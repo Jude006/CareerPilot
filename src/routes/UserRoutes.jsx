@@ -13,7 +13,7 @@ import AIDashboard from "../pages/user/AiDashboard";
 const UserRoutes = () => {
   return (
     <Routes>
-      <Route path='/user/*' element={<DashboardLayout />}>
+      <Route  element={<DashboardLayout />}>
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="jobs" element={<Jobs />} />
         <Route path="add-job" element={<AddJob />} />
