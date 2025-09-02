@@ -8,6 +8,7 @@ import Analytics from "../pages/user/Analytics";
 import Export from "../pages/user/Export";
 import Profile from "../pages/user/Profile";
 import DashboardLayout from "../components/user/DashboardLayout";
+import AIDashboard from "../pages/user/AiDashboard";
 
 const UserRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const UserRoutes = () => {
         <Route path="add-job" element={<AddJob />} />
         <Route path="tracker" element={<Tracker />} />
         <Route path="analytics" element={<Analytics />} />
+        <Route path="aiDashboard" element={<AIDashboard />} />
         <Route path="export" element={<Export />} />
         <Route path="profile" element={<Profile />} />
 

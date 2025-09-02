@@ -21,6 +21,7 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
     { name: 'Tracker', href: '/user/tracker', icon: BarChart3 },
     { name: 'Analytics', href: '/user/analytics', icon: FileText },
     { name: 'Export Data', href: '/user/export', icon: Download },
+    { name: 'Ai-Dashboard', href: '/user/aiDashboard', icon: Download },
     { name: 'Profile', href: '/user/profile', icon: User },
   ];
 
