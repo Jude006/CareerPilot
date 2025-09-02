@@ -33,19 +33,19 @@ const navigation = [
   },
   {
     name: 'User Management',
-    href: 'admin/users',
+    href: '/admin/users',
     icon: Users,
     current: location.pathname === '/admin/users'
   },
   {
     name: 'Job Management',
-    href: 'admin/jobs',
+    href: '/admin/jobs',
     icon: Briefcase,
     current: location.pathname === '/admin/jobs'
   },
   {
     name: 'System Settings',
-    href: 'admin/settings',
+    href: '/admin/settings',
     icon: Settings,
     current: location.pathname === 'admin/settings'
   }
