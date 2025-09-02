@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import UserRoutes from './UserRoutes';
 import AdminRoutes from './AdminRoutes';
@@ -19,9 +19,15 @@ const ProtectedRoutes = () => {
     return <Navigate to="/login" replace />;
   }
 
-{user.role === 'user' && <Route path="/user/*" element={<UserRoutes />} />}
-{user.role === 'user' && <Route path="/admin/*" element={<AdminRoutes />} />}
-
+  // For admin users, render AdminRoutes
+  if (user.role === 'admin') {
+    return <AdminRoutes />;
+  }
+  
+  // For regular users, render UserRoutes
+  if (user.role === 'user') {
+    return <UserRoutes />;
+  }
 
   return <Navigate to="/login" replace />;
 };
