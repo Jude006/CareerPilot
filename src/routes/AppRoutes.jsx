@@ -1,32 +1,43 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import AppLayout from "../layouts/AppLayout";
 import Home from "../pages/Home";
-import Login from "../pages/auth/Login";
-import Register from "../pages/auth/Register";
-import ForgotPassword from "../pages/auth/ForgotPassword";
-import ResetPassword from "../pages/auth/ResetPassword";
-import ProtectedRoutes from "./ProtectedRoutes";
-import HomeLayout from "../components/layout/HomeLayout";
+import AuthRoutes from "./AuthRoutes";
+import UserRoutes from "./UserRoutes";
+import AdminRoutes from "./AdminRoutes";
 import NotFound from "../pages/NotFound";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      {/* Public routes with layout */}
-      <Route path="/" element={<HomeLayout />}>
+      {/* Public routes */}
+      <Route element={<AppLayout />}>
         <Route index element={<Home />} />
       </Route>
-      
+
       {/* Auth routes */}
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/forgot-password" element={<ForgotPassword />} />
-      <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/auth/*" element={<AuthRoutes />} />
 
-      {/* Protected routes - catch all other routes */}
-      <Route path="/*" element={<ProtectedRoutes />} />
+      {/* User routes */}
+      <Route
+        path="/user/*"
+        element={
+          <ProtectedRoute requiredRole="user">
+            <UserRoutes />
+          </ProtectedRoute>
+        }
+      />
 
-      {/* 404 catch-all */}
+      {/* Admin routes */}
+      <Route
+        path="/admin/*"
+        element={
+          <ProtectedRoute requiredRole="admin">
+            <AdminRoutes />
+          </ProtectedRoute>
+        }
+      />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
