@@ -27,27 +27,27 @@ const AdminLayout = () => {
 const navigation = [
   {
     name: 'Dashboard',
-    href: '/user/admin',
+    href: '/admin',
     icon: LayoutDashboard,
     current: location.pathname === '/user/admin'
   },
   {
     name: 'User Management',
-    href: '/user/admin/users',
+    href: 'admin/users',
     icon: Users,
     current: location.pathname === '/user/admin/users'
   },
   {
     name: 'Job Management',
-    href: '/user/admin/jobs',
+    href: 'admin/jobs',
     icon: Briefcase,
     current: location.pathname === '/user/admin/jobs'
   },
   {
     name: 'System Settings',
-    href: '/user/admin/settings',
+    href: 'admin/settings',
     icon: Settings,
-    current: location.pathname === '/user/admin/settings'
+    current: location.pathname === 'admin/settings'
   }
 ];
 
