@@ -22,10 +22,10 @@ const ProtectedRoutes = () => {
   return (
     <Routes>
       {/* User routes */}
-      {user.role === 'user' && <Route path="/user/*" element={<UserRoutes />} />}
+      {user.role === 'user' && <Route path="/*" element={<UserRoutes />} />}
       
       {/* Admin routes */}
-      {user.role === 'admin' && <Route path="/admin/*" element={<AdminRoutes />} />}
+      {user.role === 'admin' && <Route path="/*" element={<AdminRoutes />} />}
       
       {/* Redirect based on role */}
       <Route path="*" element={<Navigate to={user.role === 'admin' ? '/admin' : '/dashboard'} replace />} />

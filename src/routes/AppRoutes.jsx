@@ -24,7 +24,7 @@ const AppRoutes = () => {
       <Route path="/reset-password" element={<ResetPassword />} />
 
       {/* Protected routes */}
-      <Route path="/*" element={<ProtectedRoutes />} />
+      <Route path="/user/*" element={<ProtectedRoutes />} />
 
       {/* 404 catch-all */}
       <Route path="*" element={<NotFound />} />
